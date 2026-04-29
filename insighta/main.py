@@ -1,11 +1,17 @@
 import typer
+import sys
+from insighta import auth, profiles
 
-app = typer.Typer()
+app = typer.Typer(help="Insighta Labs+ CLI")
 
-@app.command()
-def login():
-    """Authenticate with GitHub"""
-    typer.echo("Login flow — coming soon")
+app.add_typer(profiles.app, name="profiles")
+app.command()(auth.login)
+app.command()(auth.logout)
+app.command()(auth.whoami)
 
 if __name__ == "__main__":
-    app()
+    try:
+        app()
+    except KeyboardInterrupt:
+        print("\nCancelled.")
+        sys.exit(0)
