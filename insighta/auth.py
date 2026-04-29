@@ -1,4 +1,3 @@
-import httpx
 import typer
 import threading
 import webbrowser
@@ -11,7 +10,7 @@ from rich.console import Console
 
 from insighta.api import (
     API_URL, save_credentials, clear_credentials,
-    load_credentials, request
+    request
 )
 from insighta.display import print_success, print_error
 
@@ -74,7 +73,7 @@ def login():
         print("\nLogin cancelled.")
         raise typer.Exit(0)
 
-    code = _callback_result.get("code")
+    # code = _callback_result.get("code")
     returned_state = _callback_result.get("state")
     access_token = _callback_result.get("access_token")
     refresh_token = _callback_result.get("refresh_token")
