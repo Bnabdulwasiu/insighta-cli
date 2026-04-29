@@ -50,5 +50,3 @@ insighta profiles export --format csv --gender male --country NG
 ```
 
 ---
-
-## Login Flow
