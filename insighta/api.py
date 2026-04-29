@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Optional
 
 CREDENTIALS_FILE = Path.home() / ".insighta" / "credentials.json"
-API_URL = os.getenv("INSIGHTA_API_URL", "http://localhost:8000")
+API_URL = os.getenv("INSIGHTA_API_URL", "https://profile-app-5343e495.fastapicloud.dev")
 API_HEADERS = {"X-API-Version": "1"}
 
 
